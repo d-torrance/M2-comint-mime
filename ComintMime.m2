@@ -4,7 +4,10 @@ export {
     "restoreShow",
     "updateShow"}
 
-oldshow = lookup(show, URL)
+-- save the old show(URL) in ZZ in case we reload the package
+if not ZZ#?"oldshow" then ZZ#"oldshow" = lookup(show, URL)
+oldshow = ZZ#"oldshow"
+
 newshow = url -> (
     if (m := regex("^file://(.*)", first url)) =!= null
     then (
