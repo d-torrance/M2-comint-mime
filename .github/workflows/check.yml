@@ -21,8 +21,7 @@ jobs:
           sudo apt-get install -y --no-install-recommends \
               elpa-macaulay2 macaulay2
           M2_PATH=/usr/share/emacs/site-lisp/elpa-src/macaulay2-$(M2 --version)
-          echo "(add-to-list 'load-path \"$M2_PATH\")" > ~/.emacs
-          cat ~/.emacs
+          cd /usr/share/emacs/site-lisp && ln -s $M2_PATH/*.el .
       - name: Run MELPA checks
         uses: leotaku/elisp-check@master
       - name: Install M2 package
