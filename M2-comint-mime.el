@@ -4,7 +4,7 @@
 
 ;; Author: Doug Torrance <dtorrance@piedmont.edu>
 ;; Created: 2023-12-22
-;; Version: 0.1
+;; Version: 0.2
 ;; Keywords: processes, multimedia
 ;; URL: https://github.com/d-torrance/M2-comint-mime
 ;; Package-Requires: ((comint-mime "0.1") (emacs "28.1"))
