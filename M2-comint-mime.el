@@ -34,7 +34,7 @@
 (defun M2-comint-mime-setup ()
   "Setup code for `comint-mime-setup' in `M2-comint-mode' buffers."
   (with-current-buffer (car (M2--get-send-to-buffer))
-    (end-of-buffer)
+    (goto-char (point-max))
     (insert (concat
 	     "needsPackage(\"ComintMime\", FileName => \""
 	     (file-name-directory (symbol-file 'M2-comint-mime))
