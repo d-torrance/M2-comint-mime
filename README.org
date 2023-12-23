@@ -31,6 +31,7 @@ Then add the following to your =.emacs= or =init.el=:
 =M2-comint-mime= works by loading a special Macaulay2 package, =ComintMime=,
 that replaces the [[https://macaulay2.com/doc/Macaulay2/share/doc/Macaulay2/Macaulay2Doc/html/_show.html][show(URL)]] method in Macaulay2 with one that emits a special
 escape sequence that signals =comint-mime= to display images or render HTML.
+It also prints a comment with a hyperlink to the corresponding file.
 
 ** Starting
 To start =comint-mime= from a Macaulay2 interaction buffer, run
