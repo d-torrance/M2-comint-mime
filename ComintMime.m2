@@ -16,7 +16,8 @@ newPackage("ComintMime",
 	    Name => "Doug Torrance",
 	    Email => "dtorrance@piedmont.edu",
 	    HomePage => "https://webwork.piedmont.edu/~dtorrance"}},
-    Version => "0.1")
+    Version => "0.1",
+    Date => "December 23, 2023")
 
 export {
     "restoreShow",
