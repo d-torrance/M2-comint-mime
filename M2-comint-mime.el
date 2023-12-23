@@ -24,7 +24,7 @@
 
 ;;; Commentary:
 
-;; TODO
+;; This package adds comint-mime support for Macaulay2 interaction buffers.
 
 ;;; Code:
 
