@@ -1,4 +1,4 @@
-#+TITLE: comimt-mime support for Macaulay2
+#+TITLE: comint-mime support for Macaulay2
 
 This package adds support for using [[https://github.com/astoff/comint-mime][comint-mime]] in [[https://macaulay2.com][Macaulay2]] interaction
 buffers in Emacs for displaying images or rendering HTML.
