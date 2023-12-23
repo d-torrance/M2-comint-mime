@@ -13,8 +13,8 @@ newshow = url -> (
     then (
 	file := substring(m#1, first url);
 	type := first lines get("!file -b --mime " | file);
-	print("\e]5151;{\"type\": \"" | type | "\"}\n" |
-	    first url | "\e\\\n"))
+	print("\033]5151;{\"type\": \"" | type | "\"}\n" |
+	    first url | "\033\\\n"))
     else oldshow url);
 
 updateShow = () -> (show URL := newshow;)
