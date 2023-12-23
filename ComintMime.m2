@@ -30,6 +30,9 @@ newshow = url -> (
     if (m := regex("^file://(.*)", first url)) =!= null
     then (
 	file := substring(m#1, first url);
+	printerr("showing \033]8;;", first url, "\033\\", file,
+	    "\033]8;;\033\\");
+	print "";
 	type := first lines get("!file -b --mime " | file);
 	print("\033]5151;{\"type\": \"" | type | "\"}\n" |
 	    first url | "\033\\\n"))
