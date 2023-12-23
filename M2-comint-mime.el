@@ -1,4 +1,4 @@
-;;; M2-comint-mime.el --- comint-mime for Macaulay2 -*- lexical-binding: t; -*-
+;;; M2-comint-mime.el --- Support comint-mime in M2 -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2023 Doug Torrance
 
