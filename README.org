@@ -17,15 +17,14 @@ buffers in Emacs for displaying images or rendering HTML.
 In a terminal:
 
 #+begin_src shell
-  mkdir -p ~/.emacs.d/lisp
-  cd ~/.emacs.d/lisp
   git clone https://github.com/d-torrance/M2-comint-mime
+  cd M2-comint-mime
+  make install
 #+end_src
 
 Then add the following to your =.emacs= or =init.el=:
 
 #+begin_src elisp
-  (add-to-list 'load-path "~/.emacs.d/lisp/M2-comint-mime")
   (require 'M2-comint-mime)
 #+end_src
 
