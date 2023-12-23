@@ -1,0 +1,42 @@
+#+TITLE: comimt-mime support for Macaulay2
+
+This package adds support for using [[https://github.com/astoff/comint-mime][comint-mime]] in [[https://macaulay2.com][Macaulay2]] interaction
+buffers in Emacs for displaying images or rendering HTML.
+
+[[./M2-comint-mime-screenshot.jpg]]
+
+* Installation
+** Requirements
+- [[https://macaulay2.com][Macaulay2]]
+- [[https://github.com/Macaulay2/M2-emacs][M2-emacs]]
+- [[https://github.com/astoff/comint-mime][comint-mime]]
+
+** Installing
+In a terminal:
+
+#+begin_src shell
+  cd ~/.emacs.d/elpa
+  git clone https://github.com/d-torrance/M2-comint-mime
+#+end_src
+
+Then add the following to your =.emacs= or =init.el=:
+
+#+begin_src elisp
+  (add-to-list 'load-path "~/.emacs.d/elpa/M2-comint-mime")
+  (require 'M2-comint-mime)
+#+end_src
+
+* Use
+** How it works
+=M2-comint-mime= works by loading a special Macaulay2 package, =ComintMime=,
+that replaces the [[https://macaulay2.com/doc/Macaulay2/share/doc/Macaulay2/Macaulay2Doc/html/_show.html][show(URL)]] method in Macaulay2 with one that emits a special
+escape sequence that signals =comint-mime= to display images or render HTML.
+
+** Starting
+To start =comint-mime= from a Macaulay2 interaction buffer, run
+=M-x comint-mime-setup=.  That's it!
+
+** Changing behavior
+If you would like to restore the behavior of =show= to use an external viewer,
+run =restoreShow()= inside Macaulay2.  Run =updateShow()= to go back to
+using =comint-mime=.
