@@ -121,6 +121,7 @@ restoreShow()
 assert match("html\\.m2$", first locate(show, URL))
 updateShow()
 assert match("ComintMime\\.m2$", first locate(show, URL))
+restoreShow()
 
 -- check that reloading works
 loadPackage("ComintMime", FileName => ComintMime#"source file", Reload => true)
