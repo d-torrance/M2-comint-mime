@@ -7,7 +7,7 @@
 ;; Version: 0.1
 ;; Keywords: processes, multimedia
 ;; URL: https://github.com/d-torrance/M2-comint-mime
-;; Package-Requires: ((comint-mime "0.1") (M2 "1.1"))
+;; Package-Requires: ((comint-mime "0.1"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
