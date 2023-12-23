@@ -4,6 +4,7 @@
 (require 'M2)
 
 (defun M2-comint-mime-setup ()
+  "Setup code for `comint-mime-setup' in `M2-comint-mode' buffers."
   (with-current-buffer (car (M2--get-send-to-buffer))
     (end-of-buffer)
     (insert (concat
