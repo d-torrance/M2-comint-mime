@@ -23,7 +23,7 @@ jobs:
           LISP_PATH=$(emacs --no-site-lisp --batch \
               --eval '(message (car load-path))' 2>&1)
           M2_PATH=/usr/share/emacs/site-lisp/elpa-src/macaulay2-$(M2 --version)
-          cd $LISP_PATH && ln -s $M2_PATH/*.el .
+          cd $LISP_PATH && sudo ln -s $M2_PATH/*.el .
       - name: Run MELPA checks
         uses: leotaku/elisp-check@master
       - name: Install M2 package
