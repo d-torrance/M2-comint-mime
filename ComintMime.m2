@@ -26,11 +26,21 @@ export {
 if not ZZ#?"oldshow" then ZZ#"oldshow" = lookup(show, URL)
 oldshow = ZZ#"oldshow"
 
+-- try several options for getting mime type
+typecmd = (
+    if run "command -v xdg-mime > /dev/null" == 0
+    then "!xdg-mime query filetype "
+    else if run "command -v mimetype > /dev/null" == 0
+    then "!mimetype -b "
+    else if run "command -v file > /dev/null" == 0
+    then "!file --mime -b "
+    else error "cannot find command for determining mime type")
+
 newshow = url -> (
     if (m := regex("^file://(.*)", first url)) =!= null
     then (
 	file := substring(m#1, first url);
-	type := first lines get("!file -b --mime " | file);
+	type := first lines get(typecmd | file);
 	if match({"^image", "^text"}, type)
 	then (
 	    printerr("showing \033]8;;", first url, "\033\\", file,
