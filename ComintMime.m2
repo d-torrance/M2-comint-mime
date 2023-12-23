@@ -56,6 +56,65 @@ restoreShow = () -> (show URL := oldshow;)
 
 updateShow()
 
+beginDocumentation()
+
+doc ///
+  Key
+    ComintMime
+  Headline
+    comint-mime for Macaulay2
+  Description
+    Text
+      This Macaulay2 package adds support for the Emacs package
+      @HREF{"https://github.com/astoff/comint-mime", "comint-mime"}@,
+      which displays graphics and other MIME attachments in Emacs shells.
+      In particular, it redefines @TO (show, URL)@ to emit a special
+      escape sequence, which will be interpreted by comint-mime, instead
+      of opening the file in the default system viewer.
+
+      This package should not be loaded manually.  Instead, it will be loaded
+      automatically after running @KBD "M"@-@KBD "x"@ @SAMP "comint-mime-setup"@
+      in Emacs.
+
+      To restore @SAMP "show"@ to its default behavior, run @TO restoreShow@,
+      and to go back to the updated behavior, run @TO updateShow@.
+///
+
+doc ///
+  Key
+    updateShow
+  Headline
+    update the definition of show(URL) for comint-mime support
+  Usage
+    updateShow()
+  Description
+    Text
+      This function is run automatically after loading the @TO ComintMime@
+      package.  It redefines @TO (show, URL)@ to emit a special escape sequence,
+      which will be interpreted by comint-mime to display the given file in
+      the Emacs buffer instead of using the default system viewer.
+
+      To restore the default behavior of @SAMP "show"@, run @TO restoreShow@.
+  SeeAlso
+    restoreShow
+///
+
+doc ///
+  Key
+    restoreShow
+  Headline
+    restore the default definition of show(URL)
+  Usage
+    restoreShow()
+  Description
+    Text
+      This function restores the behavior of @TO (show, URL)@ to the default,
+      i.e., to display the given file using the default system viewer instead
+      of in the Emacs buffer.
+  SeeAlso
+    updateShow
+///
+
 TEST ///
 assert match("ComintMime\\.m2$", first locate(show, URL))
 restoreShow()
