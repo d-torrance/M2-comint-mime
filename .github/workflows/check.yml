@@ -31,3 +31,5 @@ jobs:
         run: M2 -q --stop -e 'installPackage "ComintMime"; exit 0'
       - name: Test M2 package
         run: M2 -q --stop -e 'check needsPackage "ComintMime"; exit 0'
+      - name: Install Emacs package
+        run: make install
