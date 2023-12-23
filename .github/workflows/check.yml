@@ -15,6 +15,12 @@ jobs:
         uses: purcell/setup-emacs@master
         with:
           version: 29.1
+      - name: Install M2 Emacs package
+        run: |
+          sudo add-apt-repository -y ppa:macaulay2/macaulay2
+          sudo apt-get install -y --no-install-recommends elpa-macaulay2
+          M2_PATH=/usr/share/emacs/site-lisp/elpa/macaulay2-$(M2 --version)
+          echo "(add-to-list 'load-path \"$M2_PATH\")" > ~/.emacs
       - name: Run MELPA checks
         uses: leotaku/elisp-check@master
       - name: Install Macaulay2
