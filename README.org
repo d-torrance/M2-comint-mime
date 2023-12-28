@@ -1,4 +1,4 @@
-#+TITLE: comint-mime support for Macaulay2
+#+TITLE: Macaulay2 support for comint-mime
 
 [[https://github.com/d-torrance/M2-comint-mime/actions/workflows/check.yml][file:https://github.com/d-torrance/M2-comint-mime/actions/workflows/check.yml/badge.svg]]
 
